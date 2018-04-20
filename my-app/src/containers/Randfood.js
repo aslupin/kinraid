@@ -19,12 +19,16 @@ class App extends Component {
       'ข้าวกะเพราไก่',
       'ข้าวผัดหมู',
       'ข้าวคะน้าหมูกรอบ',
-      'ข้าวผัดปลาเค็ม'],
+      'ข้าวผัดปลาเค็ม',
+      'ข้าวไข่เจียว',
+      'ข้าวผัดกุ้ง',
+      'ข้าวผัดทะเล'],
       get_food: 'กดสุ่มเลยจ้า'
     }
   }
   RandomFood = () => {
-    var index_random = Math.floor((Math.random() * 10) + 1) - 1
+    
+    var index_random = Math.floor((Math.random() * this.state.menu.length) + 1) - 1
     this.setState({
       get_food: this.state.menu[index_random]
     })
