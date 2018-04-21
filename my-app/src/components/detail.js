@@ -2,7 +2,7 @@ import React from 'react'
 const Detail = (props) => {
     return(
         <div>
-       <h4> === Detail COMPONENT ===</h4>
+        Detail-Food
         </div>
     
     );
