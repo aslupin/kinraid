@@ -4,15 +4,26 @@ import Result from '../components/result_random'
 import Detail from '../components/detail'
 import Dailog from '../components/dailog_detail'
 import Banner from '../dist/img/banner.png'
+import Random from '../dist/img/random.png'
+import '../dist/css/shake.css'
+
 const kinraidHead = {
   fontSize: '20px'
 }
 const btnRandom = {
   fontSize: '45px'
 }
-const stybanner = {
+const styRandom = {
+  width: '70%',
+  
+  maxWidth: '350px',
+  paddingTop: '30px'
+  
+  
+}
+const styBanner = {
   width: '80%',
-  maxWidth: '450px'
+  maxWidth: '550px'
 }
 class App extends Component {
   constructor(props){
@@ -95,13 +106,13 @@ class App extends Component {
     return (
       <div className="App-randfood">
         <br />
-        <img src={Banner} style={stybanner} className="animated swing" />
+        <img src={Banner} style={styBanner} className="animated swing" />
         <br /><br />
         <Result className={this.state.active? 'animated swing': null} get_food = {this.state.get_food} />
-        <br />
+        
         <Detail get_food = {this.state.get_food} />
-        <br />
-        <button type="button" className="btn btn-outline-info btn-lg" onClick = {this.randomFood}>สุ่มมมมม</button>
+        
+        <img src={Random} onClick = {this.randomFood} style={styRandom} className="btnShake" />
         
         
       </div>
