@@ -1,8 +1,15 @@
 import React from 'react'
 const Result = (props) => {
+    const colorFood = {
+        color: '#5C9973'
+    }
     return(
         
-        <div>{props.get_food}</div>
+        <div style={colorFood}> 
+         
+         {props.get_food}  
+         
+         </div>
     
     );
 }
