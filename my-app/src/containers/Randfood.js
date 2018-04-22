@@ -84,18 +84,28 @@ class App extends Component {
         'ข้าวยำไก่แซ่บ'
       ],
       get_food: 'กดสุ่มเลยจ้า',
-      active: false
+      show: false,
+      showClass: undefined
     }
   }
-  
-  toggleClass(){
-    const currentState = this.state.active
-    this.setState({
-      active: !currentState
-    })
+  showFlashMessage = (event) => {
+    this._showFlashMessage(event)
   }
 
+  _showFlashMessage(event) {
+    this.setState({
+      show: !this.state.show,
+      showClass: (!this.state.show ? "animated flipInY": "animated flipInX")
+    })
+  }
   
+
+  btnRandoming = () => {
+    this.randomFood()
+    this.showFlashMessage()
+    
+    
+  }
   randomFood = () => {  
     var index_random = Math.floor((Math.random() * this.state.menu.length) + 1) - 1
     this.setState({
@@ -103,16 +113,18 @@ class App extends Component {
     })
   }
   render() {
+    let classResult = this.state.active ? "animated flipInY"  : ""
     return (
       <div className="App-randfood">
+        
         <br />
         <img src={Banner} style={styBanner} className="animated swing" />
         <br /><br />
-        <Result className={this.state.active? 'animated swing': null} get_food = {this.state.get_food} />
+        <Result get_food={this.state.get_food} flipResult={this.state.showClass} />
         
-        <Detail get_food = {this.state.get_food} />
+        <Detail get_food={this.state.get_food} />
         
-        <img src={Random} onClick = {this.randomFood} style={styRandom} className="btnShake" />
+        <img src={Random} onClick = {this.btnRandoming} style={styRandom} className="btnShake" />
         
         
       </div>

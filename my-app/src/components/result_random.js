@@ -15,12 +15,11 @@ const Result = (props) => {
     return(
         <div>
         
-        <div style={colorFood}> 
+        <div style={colorFood} className={props.flipResult}> 
             <img src={Spoon} style={stySpoonAndFork} />
             {props.get_food}  
             <img src={Fork} style={stySpoonAndFork} />
         </div>
-        
         </div>
     );
 }
