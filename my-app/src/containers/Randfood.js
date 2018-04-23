@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import Result from '../components/result_random'
 import Detail from '../components/detail'
-import Dailog from '../components/dailog_detail'
 import Banner from '../dist/img/banner.png'
 import Random from '../dist/img/random.png'
+import {Modal,Button,ButtonToolbar} from 'react-bootstrap'
 import '../dist/css/shake.css'
 
 const kinraidHead = {
@@ -28,6 +28,7 @@ const styBanner = {
 class App extends Component {
   constructor(props){
     super(props);
+
     this.state = {
       menu: [
         'ข้าวผัดหมู',
@@ -85,14 +86,15 @@ class App extends Component {
       ],
       get_food: 'กดสุ่มเลยจ้า',
       show: false,
-      showClass: undefined
+      showClass: undefined,
+      
     }
   }
-  showFlashMessage = (event) => {
-    this._showFlashMessage(event)
+  showFlipResult = (event) => {
+    this._showFlipResult(event)
   }
 
-  _showFlashMessage(event) {
+  _showFlipResult(event) {
     this.setState({
       show: !this.state.show,
       showClass: (!this.state.show ? "animated flipInY": "animated flipInX")
@@ -102,7 +104,7 @@ class App extends Component {
 
   btnRandoming = () => {
     this.randomFood()
-    this.showFlashMessage()
+    this.showFlipResult()
     
     
   }
@@ -126,6 +128,10 @@ class App extends Component {
         
         <img src={Random} onClick = {this.btnRandoming} style={styRandom} className="btnShake" />
         
+
+
+
+     
         
       </div>
     );
