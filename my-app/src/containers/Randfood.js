@@ -4,15 +4,10 @@ import Result from '../components/result_random'
 import Detail from '../components/detail'
 import Banner from '../dist/img/banner.png'
 import Random from '../dist/img/random.png'
-import {Modal,Button,ButtonToolbar} from 'react-bootstrap'
+// import {Modal,Button,ButtonToolbar} from 'react-bootstrap'
 import '../dist/css/shake.css'
 
-const kinraidHead = {
-  fontSize: '20px'
-}
-const btnRandom = {
-  fontSize: '45px'
-}
+
 const styRandom = {
   width: '70%',
   
@@ -86,7 +81,9 @@ class App extends Component {
       ],
       get_food: 'กดสุ่มเลยจ้า',
       show: false,
+      showShake: false,
       showClass: undefined,
+      showShakeClass: undefined
       
     }
   }
@@ -100,10 +97,21 @@ class App extends Component {
       showClass: (!this.state.show ? "animated flipInY": "animated flipInX")
     })
   }
+  showShakeRandom = (event) => {
+    this._showShakeRandom(event)
+  }
+
+  _showShakeRandom(event) {
+    this.setState({
+      showShake: !this.state.showShake,
+      showShakeClass: (!this.state.showShake ? "btnShake": "btnShakeII")
+    })
+  }
   
 
   btnRandoming = () => {
     this.randomFood()
+    this.showShakeRandom()
     this.showFlipResult()
     
     
@@ -115,7 +123,6 @@ class App extends Component {
     })
   }
   render() {
-    let classResult = this.state.active ? "animated flipInY"  : ""
     return (
       <div className="App-randfood">
         
@@ -126,7 +133,7 @@ class App extends Component {
         
         <Detail get_food={this.state.get_food} />
         
-        <img src={Random} onClick = {this.btnRandoming} style={styRandom} className="btnShake" />
+        <img src={Random} onClick = {this.btnRandoming} style={styRandom} className={this.state.showShakeClass} />
         
 
 
