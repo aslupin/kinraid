@@ -10,7 +10,7 @@ const Detail = (props) => {
     }
     return(
         <div>
-        <button type="button" className="btn btn-outline-secondary btn-sm" > รายละเอียดอาหาร</button>
+        <button type="button" className="btn btn-outline-secondary btn-sm" > รายละเอียด</button>
         </div>
     
     );

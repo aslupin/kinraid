@@ -17,7 +17,7 @@ const Result = (props) => {
         
         <div style={colorFood} className={props.flipResult}> 
             <img src={Spoon} style={stySpoonAndFork} />
-            {props.get_food}  
+            {props.get_food[0]}  
             <img src={Fork} style={stySpoonAndFork} />
         </div>
         </div>
