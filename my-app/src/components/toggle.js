@@ -19,8 +19,8 @@ class Form extends Component {
         <Toggle
           className="btn btn-outline-warning btn-sm"
           onClick={this.onToggle}
-          on="<< สุ่มร้านอาหาร "
-          off="สุ่มอาหาร >>"
+          on="<< สุ่มอาหาร "
+          off="สุ่มร้านอาหาร >>"
           size="xs"
           onstyle="default"
           offstyle="default"
