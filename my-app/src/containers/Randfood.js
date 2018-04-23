@@ -6,6 +6,7 @@ import Dialog from '../components/dialog'
 import Banner from '../dist/img/banner.png'
 import Random from '../dist/img/random.png'
 import Toggle from '../components/toggle'
+import Footer from '../components/footer'
 import '../dist/css/shake.css'
 
 const styRandom = {
@@ -120,21 +121,19 @@ class App extends Component {
 
         <Result get_food={this.state.get_food} flipResult={this.state.showClass} />
       <br />
-  <div className="container" >
-  <div className="row">
-  <div className="col-lg-2"></div>
-  <div className="col-sm-1 col-md-3 col-lg-2"></div>
-  <div className="col-xs-6 col-sm-5 col-md-3 col-lg-2"><Dialog get_food={this.state.get_food}/></div>
-  <div className="col-xs-6 col-sm-5 col-md-3 col-lg-2"><div  onClick={this.toggleActived}><Toggle /></div></div>
-  <div className="col-sm-1 col-md-3 col-lg-2" ></div>
-  <div className="col-lg-2"></div>
-  </div></div>
-  
-  
-        
-        
-        <img src={Random} onClick = {this.btnRandoming} style={styRandom} className={this.state.showShakeClass} />
+
+      <div className="container" >
+      <div className="row">
+      <div className="col-lg-2"></div>
+      <div className="col-sm-1 col-md-3 col-lg-2"></div>
+      <div className="col-xs-6 col-sm-5 col-md-3 col-lg-2"><Dialog get_food={this.state.get_food}/></div>
+      <div className="col-xs-6 col-sm-5 col-md-3 col-lg-2"><div  onClick={this.toggleActived}><Toggle /></div></div>
+      <div className="col-sm-1 col-md-3 col-lg-2" ></div>
+      <div className="col-lg-2"></div>
+      </div></div>
       
+      <img src={Random} onClick = {this.btnRandoming} style={styRandom} className={this.state.showShakeClass} />
+      <Footer />
         
 
        
