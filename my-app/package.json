@@ -6,9 +6,11 @@
   "dependencies": {
     "animate.css": "^3.6.1",
     "bootstrap": "^4.1.0",
+    "bootstrap-toggle": "^2.2.2",
     "gh-pages": "^1.1.0",
     "react": "^15.6.2",
     "react-bootstrap": "^0.32.1",
+    "react-bootstrap-toggle": "^2.3.1",
     "react-dom": "^15.6.2",
     "react-modal-dialog": "^4.0.7",
     "react-scripts": "1.0.12",

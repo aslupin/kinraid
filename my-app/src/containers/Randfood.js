@@ -5,11 +5,11 @@ import Detail from '../components/detail'
 import Dialog from '../components/dialog'
 import Banner from '../dist/img/banner.png'
 import Random from '../dist/img/random.png'
+import Toggle from '../components/toggle'
 import '../dist/css/shake.css'
 
 const styRandom = {
-  width: '70%',
-  
+  width: '70%',  
   maxWidth: '350px',
   paddingTop: '30px'
   
@@ -51,7 +51,8 @@ class App extends Component {
       show: false,
       showShake: false,
       showClass: undefined,
-      showShakeClass: undefined
+      showShakeClass: undefined,
+      toggleActive: false
     }
   }
 
@@ -76,14 +77,32 @@ class App extends Component {
     })
   }
   
+  toggleActived = () => {
+    this.setState({
+      toggleActive: !this.state.toggleActive
+    })
+  }
 
   btnRandoming = () => {
-    this.randomFood()
+    if(this.state.toggleActive){
+      this.randomFood()
+    }
+    else{
+      this.randomRes()
+    }
+    
     this.showShakeRandom()
     this.showFlipResult()
     
     
   }
+  randomRes = () => {
+    var index_random = Math.floor((Math.random() * this.state.res.length) + 1) - 1
+    this.setState({
+      get_food: this.state.res[index_random]
+    })
+  }
+
   randomFood = () => {  
     var index_random = Math.floor((Math.random() * this.state.menu.length) + 1) - 1
     this.setState({
@@ -98,15 +117,28 @@ class App extends Component {
         <br />
         <img src={Banner} style={styBanner} className="animated swing" />
         <br /><br />
+
         <Result get_food={this.state.get_food} flipResult={this.state.showClass} />
-        <Dialog get_food={this.state.get_food} />
+      <br />
+  <div className="container" >
+  <div className="row">
+  <div className="col-lg-2"></div>
+  <div className="col-sm-1 col-md-3 col-lg-2"></div>
+  <div className="col-xs-6 col-sm-5 col-md-3 col-lg-2"><Dialog get_food={this.state.get_food}/></div>
+  <div className="col-xs-6 col-sm-5 col-md-3 col-lg-2"><div  onClick={this.toggleActived}><Toggle /></div></div>
+  <div className="col-sm-1 col-md-3 col-lg-2" ></div>
+  <div className="col-lg-2"></div>
+  </div></div>
+  
+  
+        
+        
         <img src={Random} onClick = {this.btnRandoming} style={styRandom} className={this.state.showShakeClass} />
       
         
 
        
 
-  
         
       </div>
     );

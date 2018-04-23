@@ -1,7 +1,7 @@
 import React from 'react'
 const Detail = (props) => {
     const btnDetail = {
-        fontSize: '17px',
+        fontSize: '31px',
         color: '#5C9973',
         borderColor: '#5C9973'
       }
@@ -10,7 +10,7 @@ const Detail = (props) => {
     }
     return(
         <div>
-        <button type="button" className="btn btn-outline-secondary btn-sm" > รายละเอียด</button>
+        <button type="button" className="btn btn-outline-secondary" > รายละเอียด</button>
         </div>
     
     );
