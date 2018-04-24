@@ -135,6 +135,7 @@ class App extends Component {
       <img src={Random} onClick = {this.btnRandoming} style={styRandom} className={this.state.showShakeClass} />
       <Footer />
       
+      
         
 
        
