@@ -6,7 +6,7 @@ class ModalDetail extends React.Component {
     }
     render() {
       return <ModalContainer onClose={this.props.onClose}>
-        <ModalDialog onClose={this.props.onClose} width={315} className="example-dialog" dismissOnBackgroundClick={false}>
+        <ModalDialog onClose={this.props.onClose} width={295} className="example-dialog" dismissOnBackgroundClick={true}>
           <h5>{this.props.get_food[1] === '' ? 'กดสุ่มก่อนจ้าา ':'รายละเอียด'}</h5>
           {this.props.get_food[0] === 'กดสุ่มเลยจ้า' ? '': this.props.get_food[0]}<br />
           {this.props.get_food[1] === '' ? '': this.props.get_food[1]}<br />

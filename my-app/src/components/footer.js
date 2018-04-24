@@ -7,7 +7,7 @@ const Footer = (props) => {
    }
     return(
         <div style={styP}>
-            <p >This project is part of the Innovative Thinking (01200101) |Follow us <a href="https://github.com/aslupin/kinraid">@Github</a> </p>
+            <p >This project is part of the Innovative Thinking (01200101) <br/> |Follow us <a href="https://github.com/aslupin/kinraid">@Github</a> </p>
         </div>
     );
 }
