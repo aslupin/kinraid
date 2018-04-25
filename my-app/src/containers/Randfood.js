@@ -9,6 +9,10 @@ import Toggle from '../components/toggle'
 import Footer from '../components/footer'
 import '../dist/css/shake.css'
 
+const spaceDiv = {
+  paddingTop: '20px'
+}
+
 const styRandom = {
   width: '70%',  
   maxWidth: '350px',
@@ -216,7 +220,8 @@ class App extends Component {
         <br /><br />
 
         <Result get_food={this.state.get_food} flipResult={this.state.showClass} />
-      <br />
+      
+      <div style={spaceDiv}></div>
 
       <div className="container" >
       <div className="row">
