@@ -149,11 +149,13 @@ class App extends Component {
 
       ],
       get_food: ['กดสุ่มเลยจ้า','','',''],
+      checkRepeatedly: '',
       show: false,
       showShake: false,
       showClass: undefined,
       showShakeClass: undefined,
       toggleActive: false
+      
     }
   }
 
@@ -198,17 +200,31 @@ class App extends Component {
     
   }
   randomRes = () => {
-    var index_random = Math.floor((Math.random() * this.state.res.length) + 1) - 1
-    this.setState({
-      get_food: this.state.res[index_random]
-    })
+    while(1){
+      var index_random = Math.floor((Math.random() * this.state.res.length) + 1) - 1
+      if(this.state.checkRepeatedly !== this.state.res[index_random][0]){
+        this.setState({
+          get_food: this.state.res[index_random],
+          checkRepeatedly: this.state.res[index_random][0]
+        })
+        break
+      }
+    }
+    
+    
   }
 
   randomFood = () => {  
-    var index_random = Math.floor((Math.random() * this.state.menu.length) + 1) - 1
-    this.setState({
-      get_food: this.state.menu[index_random]
-    })
+    while(1){
+      var index_random = Math.floor((Math.random() * this.state.menu.length) + 1) - 1
+      if(this.state.checkRepeatedly !== this.state.menu[index_random][0]){
+      this.setState({
+        get_food: this.state.menu[index_random],
+        checkRepeatedly: this.state.menu[index_random][0]
+      })
+      break
+      }
+    }
   }
   
   render() {
